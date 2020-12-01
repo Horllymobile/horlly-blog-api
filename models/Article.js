@@ -15,7 +15,7 @@ const Comments = new Schema({
     body: {
         type: String,
         required: true
-    }
+    },
 });
 
 
@@ -39,6 +39,11 @@ const articleSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    category: {
+        type: String,
+        required: true,
+        maxlength: 50
     },
     comments: [Comments]
 })
