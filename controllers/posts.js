@@ -1,6 +1,6 @@
 const Article = require('../models/Article');
 
-const getPosts = (req, res) => {
+const getPosts = async (req, res) => {
     try {
         const posts = await Article.find();
         return res.json(posts);

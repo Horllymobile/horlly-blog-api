@@ -1,6 +1,6 @@
 "use strict";
 const express = require('express');
-require('dotenv').config({path: './configs/'});
+require('dotenv').config();
 
 const db = require('./database/mongodb');
 

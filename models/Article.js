@@ -1,4 +1,23 @@
 const { model, Schema } = require('mongoose');
+const Comments = new Schema({
+    title: {
+        type: String,
+        required: true,
+    },
+    username: {
+        type: String,
+        required: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    },
+    body: {
+        type: String,
+        required: true
+    }
+});
+
 
 const articleSchema = new Schema({
     title: {
@@ -23,24 +42,5 @@ const articleSchema = new Schema({
     },
     comments: [Comments]
 })
-
-const Comments = new Schema({
-    title: {
-        type: String,
-        required: true,
-    },
-    username: {
-        type: String,
-        required: true
-    },
-    date: {
-        type: Date,
-        default: Date.now
-    },
-    body: {
-        type: String,
-        required: true
-    }
-});
 
 module.exports = model('Article', articleSchema);
