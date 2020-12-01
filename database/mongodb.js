@@ -5,7 +5,8 @@ module.exports =  async function() {
     try {
         const con = await mongoose.connect(process.env.MONGO_URI_PROD, {
             useNewUrlParser: true,
-            useCreateIndex: true
+            useCreateIndex: true,
+            useUnifiedTopology: true
         });
 
         if(con){
