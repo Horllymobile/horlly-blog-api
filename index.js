@@ -2,6 +2,10 @@
 const express = require('express');
 require('dotenv').config({path: './configs/'});
 
+const db = require('./database/mongodb');
+
+db();
+
 // Routes Import 
 const postRoutes = require('./routes/posts');
 
