@@ -6,6 +6,7 @@ const routes = express.Router();
 
 routes.get('/posts',postController.getPosts);
 
+routes.post('/posts',postController.createPost);
 
 
 module.exports = routes;
