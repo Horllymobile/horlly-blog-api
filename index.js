@@ -15,6 +15,8 @@ const app = express();
 // Middlewares
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+app.use(require('cors')({allowedHeaders:true,methods:'POST, GET, PUT'}));
+app.use(require('helmet')({xssFilter: true }));
 
 // Routes
 app.get('/', (req, res) => {
