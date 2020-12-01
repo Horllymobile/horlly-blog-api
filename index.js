@@ -12,10 +12,14 @@ const postRoutes = require('./routes/posts');
 
 const app = express();
 
+// Middlewares
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+
+// Routes
 app.get('/', (req, res) => {
     res.send('Welcome to my Blog API"S');
 })
-
 app.use('/api', postRoutes);
 
 const PORT = process.env.PORT || 3000;

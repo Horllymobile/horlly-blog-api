@@ -9,8 +9,16 @@ const getPosts = async (req, res) => {
     }
 };
 
-const createPost = (req, res) => {
-    res.send('Posts');
+const createPost = async (req, res) => {
+    try {
+        const post = new Article(req.body);
+
+         post.save().then(data => {
+            return res.status(201).json(data);
+        })
+    } catch (error) {
+        return res.status(400).send(error);
+    }
 };
 
 
