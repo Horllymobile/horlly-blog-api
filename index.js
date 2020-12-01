@@ -1,5 +1,4 @@
 "use strict";
-
 const express = require('express');
 require('dotenv').config({path: './configs/'});
 
@@ -10,7 +9,7 @@ const postRoutes = require('./routes/posts');
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('Welcome to my API"S');
+    res.send('Welcome to my Blog API"S');
 })
 
 app.use('/api', postRoutes);
