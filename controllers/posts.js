@@ -9,6 +9,15 @@ const getPosts = async (req, res) => {
     }
 };
 
+const getPost = async (req, res) => {
+    try {
+        const posts = await Article.findById(req.params.id);
+        return res.json(posts);
+    } catch (error) {
+        return res.send(error.message);
+    }
+};
+
 const createPost = async (req, res) => {
     const post = new Article(req.body);
 
@@ -23,5 +32,6 @@ const createPost = async (req, res) => {
 
 module.exports = {
     getPosts,
+    getPost,
     createPost
 }
